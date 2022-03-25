@@ -9,13 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl implements UserDAO {
 
     @Override
     public User getUserGivenUsername(String username) {
         User user = null;
 
-        try (Connection conn = ConnectionUtil.getConnection()){
+        try (Connection conn = ConnectionUtil.getConnection()) {
 
             String sql = "SELECT * FROM ERS_USERS WHERE ERS_USERNAME = ?;";
 
@@ -27,10 +27,10 @@ public class UserDAOImpl implements UserDAO{
 
             ResultSet rs = ps.executeQuery();
 
-            while(rs.next()){
+            while (rs.next()) {
                 user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
             }
-        }catch (SQLException sqle){
+        } catch (SQLException sqle) {
             sqle.printStackTrace();
         }
         return user;
@@ -38,7 +38,7 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public void createUser(User user) {
-        try (Connection conn = ConnectionUtil.getConnection()){
+        try (Connection conn = ConnectionUtil.getConnection()) {
 
             String sql = "INSERT INTO ERS_USERS(ERS_USERNAME, ERS_PASSWORD, USER_FIRST_NAME , USER_LAST_NAME, USER_EMAIL) VALUES (?, ?, ?, ?, ?);";
 
@@ -51,56 +51,8 @@ public class UserDAOImpl implements UserDAO{
 
             ps.executeUpdate();
 
-        }catch (SQLException sqle){
+        } catch (SQLException sqle) {
             sqle.printStackTrace();
         }
     }
-
-
-
-
-    /*
-    @Override
-    public User getUserGivenUsername(String username) {
-        User user = null;
-
-        try (Connection conn = ConnectionUtil.getConnection()) {
-
-            String sql = "SELECT * FROM ERS_USERS WHERE ERS_USERNAME = ?;";
-
-            PreparedStatement ps = conn.prepareStatement(sql);
-
-            ps.setString(1, username);
-
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
-            }
-
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-        }
-        return user;
-    }
-
-    @Override
-    public void createUser(User user) {
-        try (Connection conn = ConnectionUtil.getConnection()){
-            String sql = "INSERT INTO ERS_USERS (ERS_USERNAME, ERS_PASSWORD, USER_FIRST_NAME , USER_LAST_NAME, USER_EMAIL) VALUES (?, ?, ?, ?, ?);";
-
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, user.getUsername());
-            ps.setString(2, user.getPassword());
-            ps.setString(3, user.getFirstname());
-            ps.setString(4, user.getLastname());
-            ps.setString(5, user.getEmail());
-
-            ps.executeQuery();
-
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-        }
-    }
-     */
 }
