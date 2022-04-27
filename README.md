@@ -5,7 +5,7 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 
 **State-chart Diagram (Reimbursement Statuses)** 
 
-![](./imgs/state-chart.jpg)
+![](https://github.com/Java-Full-Stack-2-21/Project1Template/blob/main/imgs/state-chart.jpg)
 
 
 **Logical Model**
