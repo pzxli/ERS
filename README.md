@@ -5,21 +5,21 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 
 **State-chart Diagram (Reimbursement Statuses)** 
 
-![](https://github.com/Java-Full-Stack-2-21/Project1Template/blob/main/imgs/state-chart.jpg)
+![](./imgs/state-chart.jpg)
 
 
 **Logical Model**
 
-![](https://github.com/Java-Full-Stack-2-21/Project1Template/blob/main/imgs/logical.jpg)
+![](./imgs/logical.jpg)
 
 **Physical Model**
 
-![](https://github.com/Java-Full-Stack-2-21/Project1Template/blob/main/imgs/physical.jpg)
+![](./imgs/physical.jpg)
 
 **Use Case Diagram**
 
-![](https://github.com/Java-Full-Stack-2-21/Project1Template/blob/main/imgs/use-case.jpg)
+![](./imgs/use-case.jpg)
 
 **Activity Diagram**
 
-![](https://github.com/Java-Full-Stack-2-21/Project1Template/blob/main/imgs/activity.jpg)
+![](./imgs/activity.jpg)
