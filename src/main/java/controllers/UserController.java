@@ -19,34 +19,14 @@ public class UserController {
     }
 
     public void createUser(Context context){
-
         JsonResponse jsonResponse;
-
         User user = context.bodyAsClass(User.class);
         if(userService.createUser(user)){
             jsonResponse = new JsonResponse(true, "user has been created", null);
         }else{
             jsonResponse = new JsonResponse(false, "username already exist", null);
         }
-
         context.json(jsonResponse);
     }
-
-    public void login(Context context){
-        JsonResponse jsonResponse;
-
-        User credentials = context.bodyAsClass(User.class);
-
-        User userFromDb = userService.validateCredentials(credentials.getUsername(), credentials.getPassword());
-
-        if(userFromDb == null){
-            jsonResponse = new JsonResponse(false, "invalid username or password", null);
-        }else{
-            jsonResponse = new JsonResponse(true, "login successful", userFromDb);
-        }
-
-        context.json(jsonResponse);
-    }
-
 
 }

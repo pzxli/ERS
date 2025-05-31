@@ -1,4 +1,5 @@
 import controllers.ReimbursementController;
+import controllers.SessionController;
 import controllers.UserController;
 import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
@@ -16,14 +17,16 @@ public class MainDriver {
             javalinConfig.addStaticFiles("/", Location.CLASSPATH);
         }).start(9001);
 
-        //Javalin app = Javalin.create().start(9001);
+//        Javalin app = Javalin.create().start(9001);
 
         UserController userController = new UserController();
         ReimbursementController reimbursementController = new ReimbursementController();
+        SessionController sessionController = new SessionController();
+
 
         //user endpoints
         app.post("/user", userController::createUser);
-        app.post("/login", userController::login);
+        app.post("/login", sessionController::login);
 
         //employee endpoints
         app.get("/user/{author}/list", reimbursementController::displayPastReimbursements);

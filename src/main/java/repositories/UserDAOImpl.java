@@ -45,8 +45,8 @@ public class UserDAOImpl implements UserDAO {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
-            ps.setString(3, user.getFirstName());
-            ps.setString(4, user.getLastName());
+            ps.setString(3, user.getFirstname());
+            ps.setString(4, user.getLastname());
             ps.setString(5, user.getEmail());
 
             ps.executeUpdate();

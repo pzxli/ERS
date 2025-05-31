@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3637d234-b179-471f-a09e-c4dee91670b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/register/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/register/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/services/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MainDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MainDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/ReimbursementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/ReimbursementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/JsonResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/JsonResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Reimbursement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Reimbursement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/ReimbursementStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/ReimbursementStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/ReimbursementType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/ReimbursementType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/UserRole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/register/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/register/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repositories/ReimbursementDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/ReimbursementDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repositories/ReimbursementDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/ReimbursementDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repositories/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repositories/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/UserDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/ReimbursementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ReimbursementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/ConnectionUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/ConnectionUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/services/ReimbursementServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/ReimbursementServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/services/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/UserServiceTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2xqcLkWx1Gf7yEV1mlpUgcMf2OQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MainDriver.executor": "Run",
+    "JUnit.ReimbursementServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.createUser.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/pzxli/Documents/coding-projects/GroceryList"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.MainDriver">
+    <configuration name="MainDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainDriver" />
+      <module name="Project1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.createUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.UserServiceTest" />
+      <option name="METHOD_NAME" value="createUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ERS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ERS" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainDriver" />
+        <item itemvalue="JUnit.UserServiceTest.createUser" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3637d234-b179-471f-a09e-c4dee91670b6" name="Changes" comment="" />
+      <created>1748668990784</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748668990784</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/models/User.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/models/User.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/models/User.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

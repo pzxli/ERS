@@ -76,4 +76,5 @@ class UserServiceTest {
         //Mockito.verify can be used to validate if a method was ran
         Mockito.verify(userDao, Mockito.times(1)).createUser(userToPass);
     }
+
 }
