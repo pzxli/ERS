@@ -5,41 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3637d234-b179-471f-a09e-c4dee91670b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MainDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/SessionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/UserRole.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repositories/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/employeedashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/employeedashboard/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/employeedashboard/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/employeedashboard/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/register/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/register/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/services/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MainDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MainDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/ReimbursementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/ReimbursementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/SessionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/SessionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/employeedashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/employeedashboard/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/employeedashboard/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/employeedashboard/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/JsonResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/JsonResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Reimbursement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Reimbursement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/ReimbursementStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/ReimbursementStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/ReimbursementType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/ReimbursementType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/UserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/register/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/register/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repositories/ReimbursementDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/ReimbursementDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repositories/ReimbursementDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/ReimbursementDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repositories/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/UserRole.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/repositories/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/UserDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ReimbursementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ReimbursementService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/ConnectionUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/ConnectionUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/services/ReimbursementServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/ReimbursementServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/services/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/UserServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +127,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/models/User.java</url>
-          <line>74</line>
+          <line>82</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

@@ -4,6 +4,7 @@ public class User {
     private Integer id;
     private String username;
     private String password;
+    private String role;
     private String firstname;
     private String lastname;
     private String email;
@@ -12,7 +13,14 @@ public class User {
     public User(){
     }
 
-    public User(String username, String password, String firstname, String lastname) {
+    public User(Integer id, String username, String password, String role){
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
+
+    public User(String username, String password, String firstname, String lastname, String email) {
         this.username = username;
         this.password = password;
         this.firstname = firstname;
@@ -20,19 +28,11 @@ public class User {
         this.email = null;
     }
 
-
-    public User(String username, String password, String firstname, String lastname, String email) {
-        this.username = username;
-        this.password = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-    }
-
-    public User(Integer id, String username, String password, String firstname, String lastname, String email, Integer roleId) {
+    public User(Integer id, String username, String password, String role, String firstname, String lastname, String email, Integer roleId) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.role = role;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
@@ -61,6 +61,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getFirstname() {
@@ -101,10 +109,12 @@ public class User {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
                 ", roleId=" + roleId +
                 '}';
     }
+
 }

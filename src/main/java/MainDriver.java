@@ -26,7 +26,9 @@ public class MainDriver {
 
         //user endpoints
         app.post("/user", userController::createUser);
-        app.post("/login", sessionController::login);
+        app.post("/session", sessionController::login);
+        app.get("/session", sessionController::checkSession);
+        app.delete("/session", sessionController::logout);
 
         //employee endpoints
         app.get("/user/{author}/list", reimbursementController::displayPastReimbursements);

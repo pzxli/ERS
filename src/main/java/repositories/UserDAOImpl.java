@@ -19,22 +19,30 @@ public class UserDAOImpl implements UserDAO {
 
             String sql = "SELECT * FROM ERS_USERS WHERE ERS_USERNAME = ?;";
 
-            //preparing our sql statement
             PreparedStatement ps = conn.prepareStatement(sql);
-
-            //we are adding the username into the question mark in the sql statement
             ps.setString(1, username);
 
             ResultSet rs = ps.executeQuery();
 
-            while (rs.next()) {
-                user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
+            if (rs.next()) {
+                user = new User();
+                user.setId(rs.getInt("ERS_USERS_ID"));
+                user.setUsername(rs.getString("ERS_USERNAME"));
+                user.setPassword(rs.getString("ERS_PASSWORD"));
+                user.setRole(rs.getString("USER_ROLE"));
+                user.setFirstname(rs.getString("USER_FIRST_NAME"));
+                user.setLastname(rs.getString("USER_LAST_NAME"));
+                user.setEmail(rs.getString("USER_EMAIL"));
+                user.setRoleId(rs.getInt("USER_ROLE_ID_FK"));
             }
+
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         }
+
         return user;
     }
+
 
     @Override
     public void createUser(User user) {

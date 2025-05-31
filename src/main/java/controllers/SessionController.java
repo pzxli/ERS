@@ -20,6 +20,7 @@ public class SessionController {
         if(userFromDb == null){
             jsonResponse = new JsonResponse(false, "invalid username or password", null);
         }else{
+            context.sessionAttribute("user", userFromDb);
             jsonResponse = new JsonResponse(true, "login successful", userFromDb);
         }
 
@@ -42,7 +43,5 @@ public class SessionController {
 
         context.json(new JsonResponse(true, "session invalidated", null));
     }
-
-
 
 }
