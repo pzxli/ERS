@@ -6,24 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="3637d234-b179-471f-a09e-c4dee91670b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/SessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/UserRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Reimbursement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Reimbursement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/ReimbursementDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/ReimbursementDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/employeedashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/employeedashboard/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/employeedashboard/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/employeedashboard/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/employeedashboard/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/employeedashboard/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MainDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/SessionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/SessionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/managerdashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/managerdashboard/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/managerdashboard/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/managerdashboard/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/register/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/register/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/employeedashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/employeedashboard/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/employeedashboard/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/employeedashboard/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/employeedashboard/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/employeedashboard/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/UserRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repositories/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/UserDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/managerdashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/managerdashboard/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/managerdashboard/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/managerdashboard/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Reimbursement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Reimbursement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/register/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/register/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repositories/ReimbursementDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repositories/ReimbursementDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

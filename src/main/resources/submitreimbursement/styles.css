@@ -1,0 +1,132 @@
+/* Container for the reimbursement form */
+#Reimbursement-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* The reimbursement form box */
+#Reimbursement-form {
+    width: 730px;
+    padding: 35px 15px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: rgb(223, 223, 223);
+    margin-top: 150px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px rgb(121, 121, 121);
+}
+
+/* Styling the heading */
+#Reimbursement-form h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Bubble radio buttons container */
+.radio-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+/* Hide native radio buttons */
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+/* Style the labels as bubbles */
+.radio-group label {
+    cursor: pointer;
+    display: inline-block;
+    background: #eee;
+    padding: 15px 30px;
+    border-radius: 50px;
+    user-select: none;
+    font-weight: bold;
+    color: #555;
+    transition: background-color 0.3s ease;
+    border: 2px solid black;
+}
+
+/* Checked radio button label styles */
+.radio-group input[type="radio"]:checked + label {
+    background-color: #007BFF;
+    color: white;
+    box-shadow: 0 0 10px #007BFF;
+}
+
+/* Center the amount input below the radio buttons */
+.amount-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px; /* space below amount input */
+}
+
+/* Amount input container */
+.amount-input-wrapper {
+    position: relative;
+    width: 150px;
+}
+
+/* Amount input styling */
+.amount-input-wrapper input {
+    width: 100%;
+    padding-left: 25px; /* space for dollar sign */
+    box-sizing: border-box;
+    text-align: right; /* align number to right */
+    height: 40px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    caret-color: black;
+    user-select: text;
+}
+
+/* Dollar sign inside amount input */
+.amount-input-wrapper::before {
+    content: '$';
+    position: absolute;
+    left: 8px;  /* position inside input */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/* Description textarea styling */
+.description-textarea {
+    width: 100%;
+    min-height: 150px; /* enough for multiple sentences */
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* space below textarea */
+    font-family: inherit;
+}
+
+/* Submit button consistent with .btn-primary */
+.btn-primary {
+    margin-top: 0;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

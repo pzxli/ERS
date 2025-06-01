@@ -1,5 +1,6 @@
 package models;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Reimbursement {
@@ -8,12 +9,17 @@ public class Reimbursement {
     private Date submitted;
     private Date resolved;
     private String description;
+    private byte[] receipt;
     private Integer author;
     private Integer resolver;
     private Integer statusId;
     private Integer typeId;
 
-    public Reimbursement(){
+    // New fields for readable values
+    private String status;  // e.g. "Pending"
+    private String type;    // e.g. "Lodging"
+
+    public Reimbursement() {
     }
 
     public Reimbursement(Integer resolver, Integer statusId, Integer id) {
@@ -29,17 +35,34 @@ public class Reimbursement {
         this.typeId = typeId;
     }
 
-    public Reimbursement(Integer id, Double amount, Date submitted, Date resolved, String description, Integer author, Integer resolver, Integer statusId, Integer typeId) {
+    public Reimbursement(Integer id, Double amount, Date submitted, Date resolved, String description, byte[] receipt, Integer author, Integer resolver, Integer statusId, Integer typeId) {
         this.id = id;
         this.amount = amount;
         this.submitted = submitted;
         this.resolved = resolved;
         this.description = description;
+        this.receipt = receipt;
         this.author = author;
         this.resolver = resolver;
         this.statusId = statusId;
         this.typeId = typeId;
     }
+
+    // New constructor with readable status/type
+    public Reimbursement(Integer id, Double amount, Date submitted, Date resolved, String description, byte[] receipt, Integer author, Integer resolver, String status, String type) {
+        this.id = id;
+        this.amount = amount;
+        this.submitted = submitted;
+        this.resolved = resolved;
+        this.description = description;
+        this.receipt = receipt;
+        this.author = author;
+        this.resolver = resolver;
+        this.status = status;
+        this.type = type;
+    }
+
+    // Getters and Setters
 
     public Integer getId() {
         return id;
@@ -81,6 +104,14 @@ public class Reimbursement {
         this.description = description;
     }
 
+    public byte[] getReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(byte[] receipt) {
+        this.receipt = receipt;
+    }
+
     public Integer getAuthor() {
         return author;
     }
@@ -113,18 +144,37 @@ public class Reimbursement {
         this.typeId = typeId;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "Reimbursement{" +
-                "Id=" + id +
+                "id=" + id +
                 ", amount=" + amount +
                 ", submitted=" + submitted +
                 ", resolved=" + resolved +
                 ", description='" + description + '\'' +
+                ", receipt=" + Arrays.toString(receipt) +
                 ", author=" + author +
                 ", resolver=" + resolver +
                 ", statusId=" + statusId +
                 ", typeId=" + typeId +
+                ", status='" + status + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

@@ -61,8 +61,13 @@ document.getElementById("login-form").addEventListener("submit", async function 
         localStorage.setItem("userId", responseBody.data.id);
         localStorage.setItem("role", responseBody.data.role);
 
-        window.location = `./employeedashboard?userId=${responseBody.data.id}`;
+    }
 
+    // redirect to employee dashboard or manager dashboard
+    if (responseBody.data.role.toLowerCase() === "employee") {
+        window.location = `./employeedashboard?userId=${responseBody.data.id}`;
+    } else {
+        window.location = `./managerdashboard?userId=${responseBody.data.id}`;
     }
 
 

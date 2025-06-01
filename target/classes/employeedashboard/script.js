@@ -18,7 +18,9 @@ window.onload = async function () {
     user = responseBody.data;
     localStorage.setItem("firstname", user.firstname);
     localStorage.setItem("role", user.role);
+    localStorage.setItem("userId", user.id);
     document.title = `ERS - ${user.role}`;
+
     document.getElementById("welcome").innerHTML = `<h2>Welcome, ${user.firstname}</h2>`;
 
     // Logout button setup
@@ -50,4 +52,26 @@ async function handleLogout() {
         alert("Logout failed.");
         console.error(err);
     }
+}
+
+// Redirect to pastreimbursements
+const viewPastReimbursement = document.getElementById("ViewPast-form");
+    if (viewPastReimbursement) {
+        viewPastReimbursement.addEventListener("submit", viewReimbursement);
+    }
+
+function viewReimbursement(event) {
+    event.preventDefault();
+    window.location = `../pastreimbursements?userId=${user.id}`;
+}
+
+// Redirect to submitreimbursement
+const submitReimbursement = document.getElementById("Reimbursement-form");
+    if (submitReimbursement) {
+        submitReimbursement.addEventListener("submit", createReimbursement);
+    }
+
+function createReimbursement(event) {
+    event.preventDefault();
+    window.location = `../submitreimbursement?userId=${user.id}`;
 }
