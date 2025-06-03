@@ -20,8 +20,8 @@
 
       <div class="container mt-5">
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-  <h2 style="margin: 0;">All Reimbursements</h2>
-  <button id="pending-btn" class="btn btn-primary">Approve/Deny Reimbursements</button>
+  <h2 style="margin: 0;">Approve/Deny Pending Reimbursements</h2>
+  <button id="pending-btn" class="btn btn-primary">Back to All Reimbursements</button>
   </div>
 
     <!-- Filter Dropdown -->
@@ -31,9 +31,6 @@
           <select id="status-filter" class="form-select">
             <option value="">Date (Old to New)</option>
             <option value="newest">Date (New to Old)</option>
-            <option value="1">Pending</option>
-            <option value="2">Approved</option>
-            <option value="3">Denied</option>
           </select>
         </div>
       </div>
@@ -50,6 +47,7 @@
     <th>Status</th>
     <th>Resolved at</th>
     <th>Resolved by</th>
+    <th>Action</th>
   </tr>
 </thead>
     <tbody>

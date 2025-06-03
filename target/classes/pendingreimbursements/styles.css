@@ -1,0 +1,17 @@
+.receipt {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        .receipt h3 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .reimbursement-entry {
+            border-bottom: 1px dashed #aaa;
+            padding: 10px 0;
+        }

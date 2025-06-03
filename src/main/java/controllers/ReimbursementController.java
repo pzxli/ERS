@@ -43,6 +43,16 @@ public class ReimbursementController {
     public void updateReimbursement(Context context){
         Reimbursement reimbursement = context.bodyAsClass(Reimbursement.class);
 
+        // Validate required fields to avoid NullPointerException
+        if (reimbursement.getId() == null || reimbursement.getResolver() == null || reimbursement.getStatusId() == null) {
+            context.status(400).json(new JsonResponse(false, "Missing required fields: id, resolver, or statusId", null));
+            return;
+        }
+
+        // Optional: log the incoming update for debugging
+        System.out.println("Updating reimbursement: " + reimbursement);
+
+        // Delegate to service
         reimbursementService.updateReimbursement(reimbursement);
 
         context.json(new JsonResponse(true, "reimbursement has been updated", null));

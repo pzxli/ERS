@@ -31,11 +31,11 @@ window.onload = async function () {
   const pendingBtn = document.getElementById("pending-btn");
   if (pendingBtn) {
     pendingBtn.addEventListener("click", () => {
-      window.location.href = `../pendingreimbursements`;
+      window.location.href = `../allreimbursements`;
     });
   }
 
-  await loadAllReimbursements(user.id);
+  await loadFilteredReimbursements(1);
 
   const statusFilter = document.getElementById("status-filter");
   if (statusFilter) {
@@ -43,11 +43,9 @@ window.onload = async function () {
         const selected = statusFilter.value;
 
         if (selected === "") {
-        await loadAllReimbursements(user.id); // Old to new
+        await loadFilteredReimbursements(1, false); // Old to new
         } else if (selected === "newest") {
-        await loadAllReimbursements(user.id, true); // New to old
-        } else {
-        await loadFilteredReimbursements(parseInt(selected));
+        await loadFilteredReimbursements(1, true); // New to old
         }
     });
   }
@@ -80,7 +78,7 @@ async function loadAllReimbursements(authorId, reverse = false) {
   }
 }
 
-async function loadFilteredReimbursements(statusId) {
+async function loadFilteredReimbursements(statusId, reverse = false) {
   try {
     const response = await fetch(`${domain}/user/${user.id}/all`, {
       credentials: "include",
@@ -90,13 +88,19 @@ async function loadFilteredReimbursements(statusId) {
 
     if (response.ok && result.success && Array.isArray(result.data)) {
       const filtered = result.data.filter(r => {
-        // Assume r.status string equals "Pending", "Approved", or "Denied"
         if (statusId === 1) return r.status.toLowerCase() === "pending";
         if (statusId === 2) return r.status.toLowerCase() === "approved";
         if (statusId === 3) return r.status.toLowerCase() === "denied";
         return true;
       });
-      renderTable(filtered);
+
+      const sorted = filtered.sort((a, b) => {
+        const dateA = new Date(a.submitted);
+        const dateB = new Date(b.submitted);
+        return reverse ? dateB - dateA : dateA - dateB;
+      });
+
+      renderTable(sorted);
     } else {
       alert("Failed to filter reimbursements.");
     }
@@ -113,6 +117,14 @@ function renderTable(reimbursements) {
   reimbursements.forEach((r) => {
     const tr = document.createElement("tr");
 
+    const isPending = r.status.toLowerCase() === "pending";
+    const actionButtons = isPending
+      ? `
+        <button class="btn btn-success btn-sm me-1" onclick="handleApprove(${r.id})">Approve</button>
+        <button class="btn btn-danger btn-sm" onclick="handleDeny(${r.id})">Deny</button>
+      `
+      : "—";
+
     tr.innerHTML = `
       <td>${r.id}</td>
       <td>${r.authorFullName}</td>
@@ -123,11 +135,74 @@ function renderTable(reimbursements) {
       <td>${r.status}</td>
       <td>${r.resolved ? formatTimestamp(r.resolved) : "—"}</td>
       <td>${r.resolverFullName || "—"}</td>
+      <td>${actionButtons}</td>
     `;
 
     tbody.appendChild(tr);
   });
 }
+
+async function handleApprove(reimbId) {
+  const confirmed = confirm("Approve this reimbursement?");
+  if (!confirmed) return;
+
+  try {
+    const response = await fetch(`${domain}/user/${user.id}/list`, {
+      method: "PATCH",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: reimbId,
+        statusId: 2,
+        resolverId: user.id,
+      }),
+    });
+
+    if (response.ok) {
+      alert("Reimbursement approved!");
+      await loadFilteredReimbursements(1); // Reload pending list
+    } else {
+      alert("Failed to approve reimbursement.");
+    }
+  } catch (err) {
+    console.error("Error approving reimbursement:", err);
+    alert("Error approving reimbursement.");
+  }
+}
+
+async function handleDeny(reimbId) {
+  const confirmed = confirm("Deny this reimbursement?");
+  if (!confirmed) return;
+
+  try {
+    const response = await fetch(`${domain}/user/${user.id}/list`, {
+      method: "PATCH",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: reimbId,
+        statusId: 3, 
+        resolverId: user.id,
+      }),
+    });
+
+    if (response.ok) {
+      alert("Reimbursement denied.");
+      await loadFilteredReimbursements(1);
+    } else {
+      alert("Failed to deny reimbursement.");
+    }
+  } catch (err) {
+    console.error("Error denying reimbursement:", err);
+    alert("Error denying reimbursement.");
+  }
+}
+
+
 
 function formatTimestamp(ts) {
   const d = new Date(ts);

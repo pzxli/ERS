@@ -28,6 +28,13 @@ window.onload = async function () {
     logoutBtn.addEventListener("click", handleLogout);
   }
 
+  const pendingBtn = document.getElementById("pending-btn");
+  if (pendingBtn) {
+    pendingBtn.addEventListener("click", () => {
+      window.location.href = `../pendingreimbursements`;
+    });
+  }
+
   await loadAllReimbursements(user.id);
 
   const statusFilter = document.getElementById("status-filter");

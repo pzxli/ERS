@@ -2,6 +2,7 @@ package models;
 
 import java.util.Arrays;
 import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonAlias;
 
 public class Reimbursement {
     private Integer id;
@@ -11,7 +12,9 @@ public class Reimbursement {
     private String description;
     private byte[] receipt;
     private Integer author;
+    @JsonAlias("resolverId")
     private Integer resolver;
+    @JsonAlias("statusId")
     private Integer statusId;
     private Integer typeId;
 
