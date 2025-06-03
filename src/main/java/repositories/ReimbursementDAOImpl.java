@@ -83,19 +83,28 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
     public List<Reimbursement> getAllReimbursements() {
         List<Reimbursement> lists = new ArrayList<>();
 
-        String sql = "SELECT ERS_REIMBURSEMENT.REIMB_ID, " +
-                "ERS_REIMBURSEMENT.REIMB_AMOUNT, " +
-                "ERS_REIMBURSEMENT.REIMB_SUBMITTED, " +
-                "ERS_REIMBURSEMENT.REIMB_RESOLVED, " +
-                "ERS_REIMBURSEMENT.REIMB_DESCRIPTION, " +
-                "ERS_REIMBURSEMENT.REIMB_RECEIPT, " +
-                "ERS_REIMBURSEMENT.REIMB_AUTHOR_FK, " +
-                "ERS_REIMBURSEMENT.REIMB_RESOLVER_FK, " +
-                "ERS_REIMBURSEMENT_STATUS.REIMB_STATUS, " +
-                "ERS_REIMBURSEMENT_TYPE.REIMB_TYPE " +
-                "FROM ERS_REIMBURSEMENT " +
-                "JOIN ERS_REIMBURSEMENT_STATUS ON ERS_REIMBURSEMENT.REIMB_STATUS_ID_FK = ERS_REIMBURSEMENT_STATUS.REIMB_STATUS_ID " +
-                "JOIN ERS_REIMBURSEMENT_TYPE ON ERS_REIMBURSEMENT.REIMB_TYPE_ID_FK = ERS_REIMBURSEMENT_TYPE.REIMB_TYPE_ID;";
+        String sql =
+                "SELECT " +
+                        "  ERS_REIMBURSEMENT.REIMB_ID, " +
+                        "  ERS_REIMBURSEMENT.REIMB_AMOUNT, " +
+                        "  ERS_REIMBURSEMENT.REIMB_SUBMITTED, " +
+                        "  ERS_REIMBURSEMENT.REIMB_RESOLVED, " +
+                        "  ERS_REIMBURSEMENT.REIMB_DESCRIPTION, " +
+                        "  ERS_REIMBURSEMENT.REIMB_RECEIPT, " +
+                        "  ERS_REIMBURSEMENT.REIMB_AUTHOR_FK, " +
+                        "  ERS_REIMBURSEMENT.REIMB_RESOLVER_FK, " +
+                        "  ERS_REIMBURSEMENT_STATUS.REIMB_STATUS, " +
+                        "  ERS_REIMBURSEMENT_TYPE.REIMB_TYPE, " +
+                        "  AUTHOR.USER_FIRST_NAME AS AUTHOR_FIRST, " +
+                        "  AUTHOR.USER_LAST_NAME AS AUTHOR_LAST, " +
+                        "  RESOLVER.USER_FIRST_NAME AS RESOLVER_FIRST, " +
+                        "  RESOLVER.USER_LAST_NAME AS RESOLVER_LAST " +
+                        "FROM ERS_REIMBURSEMENT " +
+                        "JOIN ERS_REIMBURSEMENT_STATUS ON ERS_REIMBURSEMENT.REIMB_STATUS_ID_FK = ERS_REIMBURSEMENT_STATUS.REIMB_STATUS_ID " +
+                        "JOIN ERS_REIMBURSEMENT_TYPE ON ERS_REIMBURSEMENT.REIMB_TYPE_ID_FK = ERS_REIMBURSEMENT_TYPE.REIMB_TYPE_ID " +
+                        "JOIN ERS_USERS AUTHOR ON ERS_REIMBURSEMENT.REIMB_AUTHOR_FK = AUTHOR.ERS_USERS_ID " +
+                        "LEFT JOIN ERS_USERS RESOLVER ON ERS_REIMBURSEMENT.REIMB_RESOLVER_FK = RESOLVER.ERS_USERS_ID " +
+                        "ORDER BY ERS_REIMBURSEMENT.REIMB_SUBMITTED ASC";
 
         try (Connection conn = ConnectionUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -109,11 +118,20 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
                 r.setSubmitted(rs.getTimestamp("REIMB_SUBMITTED"));
                 r.setResolved(rs.getTimestamp("REIMB_RESOLVED"));
                 r.setDescription(rs.getString("REIMB_DESCRIPTION"));
-                r.setReceipt(rs.getBytes("REIMB_RECEIPT")); // if receipt is byte[]
+                r.setReceipt(rs.getBytes("REIMB_RECEIPT"));
                 r.setAuthor(rs.getInt("REIMB_AUTHOR_FK"));
                 r.setResolver(rs.getInt("REIMB_RESOLVER_FK"));
-                r.setStatus(rs.getString("REIMB_STATUS"));  // e.g. "Pending"
-                r.setType(rs.getString("REIMB_TYPE"));      // e.g. "Lodging"
+                r.setStatus(rs.getString("REIMB_STATUS"));
+                r.setType(rs.getString("REIMB_TYPE"));
+
+                String authorName = rs.getString("author_first") + " " + rs.getString("author_last");
+                r.setAuthorFullName(authorName);
+
+                String resolverFirst = rs.getString("resolver_first");
+                String resolverLast = rs.getString("resolver_last");
+                if (resolverFirst != null && resolverLast != null) {
+                    r.setResolverFullName(resolverFirst + " " + resolverLast);
+                }
 
                 lists.add(r);
             }
@@ -146,21 +164,29 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
     public List<Reimbursement> filterByStatus(Integer statusId) {
         List<Reimbursement> lists = new ArrayList<>();
 
-        String sql = "SELECT ERS_REIMBURSEMENT.REIMB_ID, " +
-                "ERS_REIMBURSEMENT.REIMB_AMOUNT, " +
-                "ERS_REIMBURSEMENT.REIMB_SUBMITTED, " +
-                "ERS_REIMBURSEMENT.REIMB_RESOLVED, " +
-                "ERS_REIMBURSEMENT.REIMB_DESCRIPTION, " +
-                "ERS_REIMBURSEMENT.REIMB_RECEIPT, " +
-                "ERS_REIMBURSEMENT.REIMB_AUTHOR_FK, " +
-                "ERS_REIMBURSEMENT.REIMB_RESOLVER_FK, " +
-                "ERS_REIMBURSEMENT_STATUS.REIMB_STATUS, " +
-                "ERS_REIMBURSEMENT_TYPE.REIMB_TYPE " +
-                "FROM ERS_REIMBURSEMENT " +
-                "JOIN ERS_REIMBURSEMENT_STATUS ON ERS_REIMBURSEMENT.REIMB_STATUS_ID_FK = ERS_REIMBURSEMENT_STATUS.REIMB_STATUS_ID " +
-                "JOIN ERS_REIMBURSEMENT_TYPE ON ERS_REIMBURSEMENT.REIMB_TYPE_ID_FK = ERS_REIMBURSEMENT_TYPE.REIMB_TYPE_ID " +
-                "WHERE ERS_REIMBURSEMENT.REIMB_STATUS_ID_FK = ?;";
-
+        String sql =
+                "SELECT " +
+                        "ERS_REIMBURSEMENT.REIMB_ID, " +
+                        "ERS_REIMBURSEMENT.REIMB_AMOUNT, " +
+                        "ERS_REIMBURSEMENT.REIMB_SUBMITTED, " +
+                        "ERS_REIMBURSEMENT.REIMB_RESOLVED, " +
+                        "ERS_REIMBURSEMENT.REIMB_DESCRIPTION, " +
+                        "ERS_REIMBURSEMENT.REIMB_RECEIPT, " +
+                        "ERS_REIMBURSEMENT.REIMB_AUTHOR_FK, " +
+                        "ERS_REIMBURSEMENT.REIMB_RESOLVER_FK, " +
+                        "ERS_REIMBURSEMENT_STATUS.REIMB_STATUS, " +
+                        "ERS_REIMBURSEMENT_TYPE.REIMB_TYPE, " +
+                        "AUTHOR.USER_FIRST_NAME AS AUTHOR_FIRST, " +
+                        "AUTHOR.USER_LAST_NAME AS AUTHOR_LAST, " +
+                        "RESOLVER.USER_FIRST_NAME AS RESOLVER_FIRST, " +
+                        "RESOLVER.USER_LAST_NAME AS RESOLVER_LAST " +
+                        "FROM ERS_REIMBURSEMENT " +
+                        "JOIN ERS_REIMBURSEMENT_STATUS ON ERS_REIMBURSEMENT.REIMB_STATUS_ID_FK = ERS_REIMBURSEMENT_STATUS.REIMB_STATUS_ID " +
+                        "JOIN ERS_REIMBURSEMENT_TYPE ON ERS_REIMBURSEMENT.REIMB_TYPE_ID_FK = ERS_REIMBURSEMENT_TYPE.REIMB_TYPE_ID " +
+                        "JOIN ERS_USERS AUTHOR ON ERS_REIMBURSEMENT.REIMB_AUTHOR_FK = AUTHOR.ERS_USERS_ID " +
+                        "LEFT JOIN ERS_USERS RESOLVER ON ERS_REIMBURSEMENT.REIMB_RESOLVER_FK = RESOLVER.ERS_USERS_ID " +
+                        "WHERE ERS_REIMBURSEMENT.REIMB_STATUS_ID_FK = ? " +
+                        "ORDER BY ERS_REIMBURSEMENT.REIMB_SUBMITTED ASC";
 
         try (Connection conn = ConnectionUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -181,6 +207,15 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
                 r.setStatus(rs.getString("REIMB_STATUS"));
                 r.setType(rs.getString("REIMB_TYPE"));
 
+                String authorName = rs.getString("author_first") + " " + rs.getString("author_last");
+                r.setAuthorFullName(authorName);
+
+                String resolverFirst = rs.getString("resolver_first");
+                String resolverLast = rs.getString("resolver_last");
+                if (resolverFirst != null && resolverLast != null) {
+                    r.setResolverFullName(resolverFirst + " " + resolverLast);
+                }
+
                 lists.add(r);
             }
 
@@ -190,6 +225,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 
         return lists;
     }
+
 
 
 }

@@ -11,30 +11,48 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">Home</a>
+          <a class="navbar-brand" href="../managerdashboard">Home</a>
           <div class="d-flex ms-auto">
             <button class="btn btn-outline-light" id="logout-btn">Logout</button>
           </div>
         </div>
       </nav>
 
-      <div class="container">
-            <div id="welcome"><h2>Manager Dashboard</h2></div>
-            
-            
-                
-                <div id="ViewAll-container">
-                    <form id="ViewAll-form">
-                        <h3>View Existing Reimbursements</h3>
-                        <div><button class="btn btn-primary">VIEW</button></div>
-                    </form>
-                </div>
+      <div class="container mt-5">
+  <h2>All Reimbursements</h2>
 
-            </div>  
-
-            <br><br><br><br><br>
-
+    <!-- Filter Dropdown -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="status-filter" class="form-label">Filter by Status</label>
+          <select id="status-filter" class="form-select">
+            <option value="">Date (Old to New)</option>
+            <option value="newest">Date (New to Old)</option>
+            <option value="1">Pending</option>
+            <option value="2">Approved</option>
+            <option value="3">Denied</option>
+          </select>
+        </div>
       </div>
+
+  <table class="table table-striped" id="reimbursement-table">
+    <thead>
+  <tr>
+    <th>ID</th>
+    <th>Submitted by</th>
+    <th>Type</th>
+    <th>Amount</th>
+    <th>Description</th>
+    <th>Submitted at</th>
+    <th>Status</th>
+    <th>Resolved at</th>
+    <th>Resolved by</th>
+  </tr>
+</thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

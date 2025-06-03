@@ -15,9 +15,11 @@ public class Reimbursement {
     private Integer statusId;
     private Integer typeId;
 
-    // New fields for readable values
-    private String status;  // e.g. "Pending"
-    private String type;    // e.g. "Lodging"
+    private String status;
+    private String type;
+
+    private String authorFullName;
+    private String resolverFullName;
 
     public Reimbursement() {
     }
@@ -160,6 +162,22 @@ public class Reimbursement {
         this.type = type;
     }
 
+    public String getAuthorFullName() {
+        return authorFullName;
+    }
+
+    public void setAuthorFullName(String authorFullName) {
+        this.authorFullName = authorFullName;
+    }
+
+    public String getResolverFullName() {
+        return resolverFullName;
+    }
+
+    public void setResolverFullName(String resolverFullName) {
+        this.resolverFullName = resolverFullName;
+    }
+
     @Override
     public String toString() {
         return "Reimbursement{" +
@@ -175,6 +193,8 @@ public class Reimbursement {
                 ", typeId=" + typeId +
                 ", status='" + status + '\'' +
                 ", type='" + type + '\'' +
+                ", authorFullName='" + authorFullName + '\'' +
+                ", resolverFullName='" + resolverFullName + '\'' +
                 '}';
     }
 }

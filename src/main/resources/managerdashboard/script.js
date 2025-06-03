@@ -51,3 +51,14 @@ async function handleLogout() {
         console.error(err);
     }
 }
+
+// Redirect to pastreimbursements
+const viewAllReimbursement = document.getElementById("ViewAll-form");
+    if (viewAllReimbursement) {
+        viewAllReimbursement.addEventListener("submit", allReimbursement);
+    }
+
+function allReimbursement(event) {
+    event.preventDefault();
+    window.location = `../allreimbursements?userId=${user.id}`;
+}

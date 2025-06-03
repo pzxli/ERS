@@ -37,7 +37,7 @@ public class MainDriver {
         //finance manager endpoints
         app.get("/user/{author}/all", reimbursementController::displayAllReimbursements);
         app.patch("/user/{id}/list", reimbursementController::updateReimbursement);
-        app.get("user/{statusId}/list", reimbursementController::filterByStatus);
+        app.get("/user/{statusId}/list", reimbursementController::filterByStatus);
 
 
         //works --

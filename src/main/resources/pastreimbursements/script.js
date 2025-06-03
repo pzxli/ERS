@@ -19,7 +19,7 @@ window.onload = async function () {
     localStorage.setItem("firstname", user.firstname);
     localStorage.setItem("role", user.role);
     localStorage.setItem("userId", user.id);
-    document.title = `${user.firstname}'s Reimbursement`;
+    document.title = `ERS - ${user.firstname}'s Reimbursements`;
 
     // Logout button setup
     const logoutBtn = document.getElementById("logout-btn");
