@@ -19,9 +19,11 @@ window.onload = async function () {
     localStorage.setItem("firstname", user.firstname);
     localStorage.setItem("role", user.role);
     localStorage.setItem("userId", user.id);
+
+    // Set title of page to "ERS - *User's first name*'s Reimbursements"
     document.title = `ERS - ${user.firstname}'s Reimbursements`;
 
-    // Logout button setup
+    // Logout button
     const logoutBtn = document.getElementById("logout-btn");
     if (logoutBtn) {
         logoutBtn.addEventListener("click", handleLogout);
@@ -39,7 +41,7 @@ function preventBackCache() {
     });
 }
 
-// Delete session and log out
+// Logout function - Delete Session
 async function handleLogout() {
     try {
         await fetch(`${domain}/session`, {
@@ -54,7 +56,7 @@ async function handleLogout() {
     }
 }
 
-// Load and display reimbursements for this user
+// Load Reimbursements
 async function loadReimbursements(userId) {
     const container = document.getElementById("reimbursements-list");
     container.innerHTML = "<p>Loading...</p>";

@@ -18,10 +18,12 @@
         </div>
       </nav>
 
+      <!-- Submit Reimbursement Container-->
       <div id="Reimbursement-container">
     <form id="Reimbursement-form" action="/submitReimbursement" method="POST">
       <h2>Select Reimbursement</h2>
 
+      <!-- Select Reimbursement Type -->
       <div class="radio-group">
         <input type="radio" id="lodging" name="reimbursementType" value="LODGING" required />
         <label for="lodging">LODGING</label>
@@ -33,7 +35,7 @@
         <label for="travel">TRAVEL</label>
       </div>
 
-
+      <!-- Input Amount -->
     <div class ="amount-wrapper">
         <div class="amount-input-wrapper">
             <input
@@ -48,6 +50,7 @@
         </div>
     </div>
 
+    <!-- Write Description -->
         <textarea
             name="description"
             class="description-textarea"
@@ -56,7 +59,7 @@
             required
         ></textarea>
 
-
+    <!-- Submit Button -->
       <button type="submit" class="btn-primary">Submit</button>
     </form>
   </div>

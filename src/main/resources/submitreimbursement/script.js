@@ -14,14 +14,15 @@ window.onload = async function () {
         return;
     }
 
-    // Set title of page to "ERS - *User's role*"
     user = responseBody.data;
     localStorage.setItem("firstname", user.firstname);
     localStorage.setItem("role", user.role);
     localStorage.setItem("userId", user.id);
+
+    // Set title of page to "ERS - Request for *User's first name*"
     document.title = `ERS - Request for ${user.firstname}`;
 
-    // Logout button setup
+    // Logout button
     const logoutBtn = document.getElementById("logout-btn");
     if (logoutBtn) {
         logoutBtn.addEventListener("click", handleLogout);
@@ -38,7 +39,7 @@ function preventBackCache() {
     });
 }
 
-// Delete session and log out
+// Logout function - Delete Session
 async function handleLogout() {
     try {
         await fetch(`${domain}/session`, {

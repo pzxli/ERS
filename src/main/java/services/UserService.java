@@ -19,7 +19,6 @@ public class UserService {
     public User validateCredentials(String username, String password){
         User user = this.userDAO.getUserGivenUsername(username);
 
-        //user wasnt found so return null
         if(user == null)
             return null;
 
@@ -30,7 +29,6 @@ public class UserService {
     }
 
     public Boolean createUser(User user){
-        //get user from db
         User userFromDb = userDAO.getUserGivenUsername(user.getUsername());
 
         if(userFromDb != null){

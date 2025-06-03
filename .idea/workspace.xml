@@ -8,14 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ReimbursementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ReimbursementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Reimbursement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Reimbursement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/allreimbursements/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/allreimbursements/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/allreimbursements/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/allreimbursements/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/managerdashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/managerdashboard/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/allreimbursements/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allreimbursements/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/allreimbursements/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allreimbursements/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/ReimbursementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/ReimbursementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/managerdashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/managerdashboard/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Reimbursement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Reimbursement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/services/ReimbursementServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/ReimbursementServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/services/ReimbursementServiceTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +40,7 @@
   "keyToString": {
     "Application.MainDriver.executor": "Run",
     "JUnit.ReimbursementServiceTest.executor": "Run",
+    "JUnit.ReimbursementServiceTest.submitReimbursement.executor": "Run",
     "JUnit.UserServiceTest.createUser.executor": "Run",
     "JUnit.UserServiceTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -54,7 +50,7 @@
     "last_opened_file_path": "C:/Users/pzxli/Documents/coding-projects/GroceryList"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.MainDriver">
+  <component name="RunManager" selected="JUnit.ReimbursementServiceTest">
     <configuration name="MainDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainDriver" />
       <module name="Project1" />
@@ -62,7 +58,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.createUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReimbursementServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.ReimbursementServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReimbursementServiceTest.submitReimbursement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.ReimbursementServiceTest" />
+      <option name="METHOD_NAME" value="submitReimbursement" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReimbursementServiceTest.viewPastReimbursements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.ReimbursementServiceTest" />
+      <option name="METHOD_NAME" value="viewPastReimbursements" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project1" />
       <extension name="coverage">
         <pattern>
@@ -72,8 +115,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="services" />
       <option name="MAIN_CLASS_NAME" value="services.UserServiceTest" />
-      <option name="METHOD_NAME" value="createUser" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,8 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReimbursementServiceTest" />
+        <item itemvalue="JUnit.ReimbursementServiceTest.viewPastReimbursements" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.ReimbursementServiceTest.submitReimbursement" />
         <item itemvalue="Application.MainDriver" />
-        <item itemvalue="JUnit.UserServiceTest.createUser" />
       </list>
     </recent_temporary>
   </component>

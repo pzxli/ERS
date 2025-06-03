@@ -16,18 +16,20 @@ window.onload = async function () {
 
   user = sessionData.data;
 
-  // Save user info to localStorage
   localStorage.setItem("firstname", user.firstname);
   localStorage.setItem("role", user.role);
   localStorage.setItem("userId", user.id);
 
+  // Change title to "ERS - *User's role* view"
   document.title = `ERS - ${user.role} view`;
 
+  // Logout Button
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", handleLogout);
   }
 
+  // Go to Pending Reimbursements
   const pendingBtn = document.getElementById("pending-btn");
   if (pendingBtn) {
     pendingBtn.addEventListener("click", () => {
@@ -37,6 +39,7 @@ window.onload = async function () {
 
   await loadAllReimbursements(user.id);
 
+  // Filter Reimbursements
   const statusFilter = document.getElementById("status-filter");
   if (statusFilter) {
     statusFilter.addEventListener("change", async () => {
@@ -55,6 +58,7 @@ window.onload = async function () {
 
 };
 
+// Default Reimbursements Old to New
 async function loadAllReimbursements(authorId, reverse = false) {
   try {
     const response = await fetch(`${domain}/user/${authorId}/all`, {
@@ -80,6 +84,7 @@ async function loadAllReimbursements(authorId, reverse = false) {
   }
 }
 
+// Filtered Reimbursements
 async function loadFilteredReimbursements(statusId) {
   try {
     const response = await fetch(`${domain}/user/${user.id}/all`, {
@@ -134,6 +139,7 @@ function formatTimestamp(ts) {
   return d.toLocaleString();
 }
 
+// Logout function - Delete Session
 async function handleLogout() {
   try {
     await fetch(`${domain}/session`, {
@@ -148,13 +154,11 @@ async function handleLogout() {
   }
 }
 
+// Prevent back-forward cache showing stale pages
 function preventBackCache() {
-  window.addEventListener("pageshow", function (event) {
-    if (
-      event.persisted ||
-      window.performance.getEntriesByType("navigation")[0]?.type === "back_forward"
-    ) {
-      window.location.reload();
-    }
-  });
+    window.addEventListener("pageshow", function (event) {
+        if (event.persisted || window.performance.getEntriesByType("navigation")[0]?.type === "back_forward") {
+            window.location.reload();
+        }
+    });
 }

@@ -21,9 +21,10 @@ window.onload = async function () {
     localStorage.setItem("userId", user.id);
     document.title = `ERS - ${user.role}`;
 
+    // Change Text on top to "Welcome - *User's first name*"
     document.getElementById("welcome").innerHTML = `<h2>Welcome, ${user.firstname}</h2>`;
 
-    // Logout button setup
+    // Logout button
     const logoutBtn = document.getElementById("logout-btn");
     if (logoutBtn) {
         logoutBtn.addEventListener("click", handleLogout);
@@ -39,7 +40,7 @@ function preventBackCache() {
     });
 }
 
-// Delete session and log out
+// Logout function - Delete Session
 async function handleLogout() {
     try {
         await fetch(`${domain}/session`, {

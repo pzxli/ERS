@@ -6,6 +6,7 @@ import org.mockito.Mockito;
 import repositories.ReimbursementDAO;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,71 +23,74 @@ class ReimbursementServiceTest {
 
     @Test
     void submitReimbursement() {
-        //arrange
-        Reimbursement reimbursementToPass = new Reimbursement(250.00,"gas money", 1, 3 );
+        // arrange
+        // Use the constructor Reimbursement(Double amount, String description, Integer author, Integer TypeId)
+        Reimbursement reimbursementToPass = new Reimbursement(250.00, "gas money", 1, 3);
 
-        //act
+        // act
         reimbursementService.submitReimbursement(reimbursementToPass);
 
-        //assert
+        // assert
         Mockito.verify(reimbursementDAO, Mockito.times(1)).submitReimbursement(reimbursementToPass);
     }
 
     @Test
     void viewPastReimbursements() {
-        //arrange
+        // arrange
         Integer author = 2;
         List<Reimbursement> expectedOutput = new ArrayList<>();
-        expectedOutput.add(new Reimbursement(1, 200.0, null, null, "gas money", author, 3, 1, 3));
+
+        // Use the constructor Reimbursement(Integer id, Double amount, Date submitted, Date resolved, String description, byte[] receipt, Integer author, Integer resolver, Integer statusId, Integer typeId)
+        expectedOutput.add(new Reimbursement(1, 200.0, null, null, "gas money", null, author, 3, 1, 3));
         Mockito.when(reimbursementDAO.viewPastReimbursements(author)).thenReturn(expectedOutput);
 
-        //act
+        // act
         List<Reimbursement> actualOutput = reimbursementService.viewPastReimbursements(author);
 
-        //assert
+        // assert
         assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
     void getAllReimbursements() {
-        //arrange
-        Integer author = 2;
+        // arrange
         List<Reimbursement> expectedOutput = new ArrayList<>();
-        expectedOutput.add(new Reimbursement(1, 200.0, null, null, "gas money", author, 3, 1, 3));
-        expectedOutput.add(new Reimbursement(2, 250.0, null, null, "food money", author, 3, 2, 4));
+        expectedOutput.add(new Reimbursement(1, 200.0, null, null, "gas money", null, 2, 3, 1, 3));
+        expectedOutput.add(new Reimbursement(2, 250.0, null, null, "food money", null, 2, 3, 2, 4));
         Mockito.when(reimbursementDAO.getAllReimbursements()).thenReturn(expectedOutput);
 
-        //act
+        // act
         List<Reimbursement> actualOutput = reimbursementService.getAllReimbursements();
 
-        //assert
+        // assert
         assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
     void approveOrDeny() {
-        //arrange
+        // arrange
+        // Use the constructor: Reimbursement(Integer resolver, Integer statusId, Integer id)
         Reimbursement approveTest = new Reimbursement(3, 3, 3);
 
-        //act
+        // act
         reimbursementService.updateReimbursement(approveTest);
 
-        //assert
+        // assert
         Mockito.verify(reimbursementDAO, Mockito.times(1)).updateReimbursement(approveTest);
     }
 
     @Test
     void filterByStatus() {
-        //arrange
+        // arrange
         Integer statusId = 3;
         List<Reimbursement> expectedOutput = new ArrayList<>();
-        expectedOutput.add(new Reimbursement(1, 200.0, null, null, "gas money", 1, 3, statusId, 4));
+        expectedOutput.add(new Reimbursement(1, 200.0, null, null, "gas money", null, 1, 3, statusId, 4));
         Mockito.when(reimbursementDAO.filterByStatus(statusId)).thenReturn(expectedOutput);
 
-        //act
+        // act
         List<Reimbursement> actualOutput = reimbursementService.filterByStatus(statusId);
 
-        //assert
+        // assert
         assertEquals(expectedOutput, actualOutput);
     }
 }

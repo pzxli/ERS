@@ -21,13 +21,16 @@ window.onload = async function () {
   localStorage.setItem("role", user.role);
   localStorage.setItem("userId", user.id);
 
+  // Change title to "ERS - *User's role* view"
   document.title = `ERS - ${user.role} view`;
 
+  // Logout Button
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", handleLogout);
   }
 
+  // Redirect to allreimbursements
   const pendingBtn = document.getElementById("pending-btn");
   if (pendingBtn) {
     pendingBtn.addEventListener("click", () => {
@@ -37,6 +40,7 @@ window.onload = async function () {
 
   await loadFilteredReimbursements(1);
 
+  // Filter Reimbursements
   const statusFilter = document.getElementById("status-filter");
   if (statusFilter) {
     statusFilter.addEventListener("change", async () => {
@@ -53,6 +57,7 @@ window.onload = async function () {
 
 };
 
+// Load Reimbursements - Default old to new
 async function loadAllReimbursements(authorId, reverse = false) {
   try {
     const response = await fetch(`${domain}/user/${authorId}/all`, {
@@ -78,6 +83,7 @@ async function loadAllReimbursements(authorId, reverse = false) {
   }
 }
 
+// Load Filtered Reimbursements
 async function loadFilteredReimbursements(statusId, reverse = false) {
   try {
     const response = await fetch(`${domain}/user/${user.id}/all`, {
@@ -142,6 +148,7 @@ function renderTable(reimbursements) {
   });
 }
 
+// Approve Function
 async function handleApprove(reimbId) {
   const confirmed = confirm("Approve this reimbursement?");
   if (!confirmed) return;
@@ -172,6 +179,7 @@ async function handleApprove(reimbId) {
   }
 }
 
+// Deny Function
 async function handleDeny(reimbId) {
   const confirmed = confirm("Deny this reimbursement?");
   if (!confirmed) return;
@@ -209,6 +217,7 @@ function formatTimestamp(ts) {
   return d.toLocaleString();
 }
 
+// Logout function - Delete Session
 async function handleLogout() {
   try {
     await fetch(`${domain}/session`, {
@@ -223,6 +232,7 @@ async function handleLogout() {
   }
 }
 
+// Prevent back-forward cache showing stale pages
 function preventBackCache() {
   window.addEventListener("pageshow", function (event) {
     if (

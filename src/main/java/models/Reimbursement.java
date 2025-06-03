@@ -53,7 +53,6 @@ public class Reimbursement {
         this.typeId = typeId;
     }
 
-    // New constructor with readable status/type
     public Reimbursement(Integer id, Double amount, Date submitted, Date resolved, String description, byte[] receipt, Integer author, Integer resolver, String status, String type) {
         this.id = id;
         this.amount = amount;
